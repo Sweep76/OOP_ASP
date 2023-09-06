@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ProductRetrieveCode";
+    Layout = "~/Views/Shared/ProtectedLayout.cshtml";
+    String RetrieveStatus = Convert.ToString(ViewData["RetrieveStatus"]);
+    var ProductList = (IEnumerable<Product>)ViewData["ProductList"];
+}
+
+<h2>ProductRetrieveCode</h2>
+
+@foreach(var item in ProductList)
+{
+                  @item.ProductID
+                  @item.ProductPrice
+}

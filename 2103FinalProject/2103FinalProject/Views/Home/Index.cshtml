@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/IndexNew.css" />
+<div class="container-main">
+    <center>    
+        <div class="jumbotron" style="background-image: image(bg.png); padding-top:0">
+            <br><br>
+            <center>
+                <div class="row" style="padding-top:0; padding-bottom:0">
+                    <div class="col-md-4" style="border:solid; padding-bottom:15px; background-color:aquamarine;">
+                        <h2>Inventory Tracker System</h2>
+                        <button onclick="window.location.href='/Manager/Login'">Click Here</button>
+                    </div>
+                    <div class="col-md-4" style=" border: solid; padding-bottom: 15px; background-color: #00ff90;">
+                        <h2>Available Branches</h2>
+                        <button onclick="window.location.href='https://pcx.com.ph/portfolio/pc-express-sm-city-north-edsa/'">Click Here</button>
+                    </div>
+                    <div class="col-md-4" style=" border: solid; padding-bottom: 15px; background-color: #ffd800;">
+                        <h2>Admin Log-in</h2>
+                        <button onclick="window.location.href='/Admin/Login'">Click Here</button>
+                    </div>
+                </div>
+            </center>
+            <div style="background-image: url('/Content/img/computer.jpg');">
+                <h1 style="font-size:40px">Computer Supplies at your Doorstep!</h1>
+                <img class="indexphoto" src="~/Content/img/bluebell.jpg" style="height:270px;width:400px">
+                <p class="lead" style="background-color:yellow">Your One-Stop Source for All Your Computer Needs!</p>
+            </div>
+        </div>
+        
+    </center>
+
+</div>

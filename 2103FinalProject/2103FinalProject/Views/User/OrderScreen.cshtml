@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "OrderScreen";
+    Layout = "~/Views/Shared/ProtectedLayout.cshtml";
+    string[] TableHeaders = new string[] { "Product ID", "Product Name", "Product Price"};
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/OrderScreen.css" />
+<div class="table" style="padding-top:0">
+    <h2>Office Supply Availability for details yeah!</h2>
+    <p style="text-align: center">Please input the details of your order in the form below.</p>
+    <br><br>
+    <table class="table table-bordered table-hover" style="font-family:Tahoma; background-color:lightblue; padding-top:0; margin-left:190px; width: 450px;">
+        <thead>
+            s
+            <tr>
+                @foreach (var head in TableHeaders)
+                {
+                    <th>
+                        @head
+                    </th>
+                }
+            </tr>
+        </thead>
+        @{
+            if (Model != null)
+            {
+                foreach (var Data in Model)
+                {
+                    <tr>
+                        <td>@Data.ProductID</td>
+                        <td>@Data.ProductName</td>
+                        <td>@Data.ProductPrice</td>
+                    </tr>
+                }
+            }
+        }
+    </table>
+    <form method="post" action="/User/OrderCode">
+        <div class="ordermodal" style="background-color: lightcoral; width: 500px; font-family:Tahoma; margin-left: 150px;">
+            <label class="form-label">Product ID no.</label>
+            <input class="input" name="ProductID" />
+            <label class="form-label">Product Price</label>
+            <input class="input" name="ProductPrice" />
+            <label class="form-label">Quantity</label>
+            <input class="input" name="Quantity" />
+            <label class="form-label">Comments & Suggestions</label>
+            <input class="input" name="ProductDesc" />
+            <label class="form-label">Status</label>
+            <input class="input" name="Status" value="Pending" readonly />
+
+            <button onlclick="window.location.href='/User/PayScreen">Submit Order</button>
+        </div>
+    </form>
+
+
+
+</div>

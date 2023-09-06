@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" type="text/css" href="~/Content/Header.css" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="logopic">
+                <img src="~/Content/img/bluebell.jpg"></img>
+            </div>
+            <div class="headermiddle">
+                <ul class="nav navbar-nav">
+                    <li >@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+            <div class="headerright">
+                <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Register", "Register", "User")</li>
+                <li>@Html.ActionLink("Login", "Login", "User")</li>
+                </ul>
+            </div>
+        </div>
+
+        @RenderBody()
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

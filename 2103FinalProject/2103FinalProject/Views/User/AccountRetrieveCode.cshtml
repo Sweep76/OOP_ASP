@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "AccountRetrieveCode";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    String RetrieveStatus = Convert.ToString(ViewData["RetrieveStatus"]);
+    var UserList = (IEnumerable<User>)ViewData["UserList"];
+}
+
+<h2>AccountRetrieveCode</h2>
+
+@foreach(var item in UserList)
+{
+    @item.FirstName @item.LastName <br />
+}
